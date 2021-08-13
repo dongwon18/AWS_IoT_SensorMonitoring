@@ -142,7 +142,7 @@ if __name__ == '__main__':
         i = 0
         while(i < 5):
              # read data from sensor
-            temp, humidity = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+            humidity, temp = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
             if(humidity == None or temp == None):
                 print("Reading DHT failed")
             else:
