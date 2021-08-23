@@ -40,8 +40,11 @@
             };
             // make API call with parameters and use promises to get response
             fetch("https://7jrgxl13xh.execute-api.ap-northeast-2.amazonaws.com/dev", requestOptions)
-            .then(response => console.log(response))
-            .then(result => alert(JSON.parse(result).body))
+            .then(response => {
+                response.text()
+                console.log(response)
+            })
+            .then(result => alert(JSON.parse(result)))
             .catch(error => console.log('error', error));
         }
     </script>
