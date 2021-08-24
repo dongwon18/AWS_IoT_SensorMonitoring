@@ -40,14 +40,7 @@
             // make API call with parameters and use promises to get response
             fetch("https://7jrgxl13xh.execute-api.ap-northeast-2.amazonaws.com/dev", requestOptions)
             .then(response => response.text())
-            .then(data => {
-                const time = document.createElement("div");
-                const temp = document.createElement("div");
-                const humidity = document.createElement("div");
-                time.textContent = data.time;
-                temp.textContent = data.temp;
-                humidity.textContent = data.humidity;
-            })
+            .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
         }
     </script>
@@ -60,16 +53,6 @@
         <input type="text" id="lName">
         <!-- set button onClick method to call function we defined passing input values as parameters -->
         <button type="button" onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Call API</button>
-        <table>
-            <th>store time</th>
-            <th>temperature[℃]</th>
-            <th>humidity[%]</th>
-            <tr>
-                <td>time.textContent</td>
-                <td>temp.textContent</td>
-                <td>humidity.textContent</td>
-            </tr>
-        </table>           
         
     </form>
 </body>
