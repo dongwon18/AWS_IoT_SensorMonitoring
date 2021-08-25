@@ -8,7 +8,7 @@
     body {
         background-color: #232F3E;
         }
-    label, button {
+    label, button, p {
         color: #FF9900;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
@@ -40,7 +40,18 @@
             // make API call with parameters and use promises to get response
             fetch("https://7jrgxl13xh.execute-api.ap-northeast-2.amazonaws.com/dev", requestOptions)
             .then(response => response.text())
-            .then(result => document.write(JSON.parse(result).body))
+            .then(result => {
+              var data = JSON.parse(result).body;
+              data = JSON.parse(data);
+              
+              const output_time = document.getElementById('output_time');
+              const output_temp = document.getElementById('output_temp');
+              const output_humi = document.getElementById('output_humi');
+              output_time.innerHTML = 'Store time : ' + data.time + ' KST';
+              output_temp.innerHTML = 'Temperature : ' + data.temp + ' ℃';
+              output_humi.innerHTML = 'Humidity : ' + data.humidity + ' %';
+              
+            })
             .catch(error => console.log('error', error));
         }
     </script>
@@ -51,6 +62,9 @@
         <input type="text" id="client">
         <!-- set button onClick method to call function we defined passing input values as parameters -->
         <button type="button" onclick="callAPI(document.getElementById('client').value)">Refresh</button>
+        <p id="output_time"></p>
+        <p id="output_temp"></p>
+        <p id="output_humi"></p>
         
     </form>
 </body>
