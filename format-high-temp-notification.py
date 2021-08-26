@@ -7,7 +7,7 @@ import boto3
 #       "device_id": "32",
 #       "reported_temperature": 38,
 #       "max_temperature": 30,
-#       "notify_topic_arn": "arn:aws:sns:us-east-1:57EXAMPLE833:high_temp_notice"
+#       "notify_topic_arn": "SNS arn"
 #   }
 # 
 #   sends a plain text to AWS IoT Core to be used in an email 
