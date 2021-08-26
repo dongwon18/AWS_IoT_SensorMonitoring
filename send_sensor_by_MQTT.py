@@ -26,7 +26,6 @@ parser.add_argument('--endpoint', required=True, help="Your AWS IoT custom endpo
                                                       "Ex: \"abcd123456wxyz-ats.iot.us-east-1.amazonaws.com\"")
 parser.add_argument('--port', default = 8883, type = int, help="Specify port. AWS IoT supports 443 and 8883.")
 parser.add_argument('--client-id', default="test-" + str(uuid4()), help="Client ID for MQTT connection.")
-parser.add_argument('--thingName', help="Things' name to connect.")
 parser.add_argument('--topic', default="test/topic", help="Topic to subscribe to, and publish messages to.")
 parser.add_argument('--use-websocket', default=False, action='store_true',
     help="To use a websocket instead of raw mqtt. If you " +
@@ -138,6 +137,8 @@ if __name__ == '__main__':
     try:
         # Publish message to server every 5 second.
         # This step loops 5 times until user enter KeyboardInterrupt
+        # If you want to get the value all the time, change while statement
+        # If you want to get the value more often, change sleep time
         
         i = 0
         while(i < 5):
