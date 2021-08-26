@@ -10,7 +10,7 @@
 # Total Architecture
 
 <p align = 'center'>
-  <img src = "/images/Copy of AWS IoT Architecture modified.png" alt = "total architecture of project"> <br/>
+  <img src = "/images/AWS IoT Architecture modified3.png" alt = "total architecture of project"> <br/>
   total architecture of project
 </p>
 
@@ -21,8 +21,8 @@
 5. Save data to DynamoDB using AWS IoT Rule.  
 6. Check the value if it exceed the limit by AWS IoT Rule.  
 7. Send email to administrators using AWS IoT Rule, AWS Lambda, AWS SNS.  
-8. Get values from DynamoDB using AWS Mobile Hub.  
-9. Using Android Studio, monitor sensor values using Android App.  
+8. Get values from DynamoDB using AWS Lambda.  
+9. Using AWS Amplify and API Gateway, monitor sensor values at the web page.  
 
 # Developing Environment
 - RaspberryPi
