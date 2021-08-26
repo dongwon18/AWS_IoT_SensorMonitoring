@@ -37,5 +37,18 @@
     - [Tutorial of AWS IoT](https://dongwon18.github.io/categories/#aws-iot) 
     - [Project detail](https://dongwon18.github.io/categories/#sensormonitoring)
 
+# How to Run
+- To run send_sensor_by_MQTT.py
+    - Following command options are recommanded.
+
+
+    `python3 send_sensor_by_MQTT.py --endpoint *YOUR-endpoint* --client-id RPI --topic device/RPI/data`
+    - `--endpoint` option is essential
+    - using `device/+/data` as `--topic` is necessary to activate predefined AWS IoT Rule.
+    - other options can be used
+- You can run the code continuously
+  - Code is set to publish the data 5 times.
+  - You can set to publish the data without limit by modifying the condition statement of the while block. 
+
 # Reference
 - AWS IoT Development Guide and sample code
